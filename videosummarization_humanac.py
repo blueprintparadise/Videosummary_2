@@ -6,7 +6,7 @@ width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 threshold = 20.
 
-writer = cv2.VideoWriter('final2.mp4', cv2.VideoWri8ter_fourcc(*'DIVX'), 25, (width, height))
+writer = cv2.VideoWriter('final2.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 25, (width, height))
 ret, frame1 = video.read()
 prev_frame = frame1
 
