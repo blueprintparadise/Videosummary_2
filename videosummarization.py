@@ -45,7 +45,7 @@ while True:
                 lst.append("End")
             #cv2.imshow('frame', frame)
             c += 1
-        print(len(fin_dct))
+        #print(len(fin_dct))
         if len(fin_dct) > 880:
             video.release()
             writer.release()
