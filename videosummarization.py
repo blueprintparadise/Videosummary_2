@@ -2,12 +2,12 @@ import cv2 # pip install opencv-python
 import numpy as np # pip install numpy
 from datetime import timedelta
 
-video = cv2.VideoCapture('1.mp4')
+video = cv2.VideoCapture('/content/Videosummary_2/1.mp4')
 width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 threshold = 20.
 FPS = 2.0
-writer = cv2.VideoWriter('final.mp4', cv2.VideoWriter_fourcc(*'XVID'), FPS, (width, height))
+writer = cv2.VideoWriter('/content/Videosummary_2/fin.mp4', cv2.VideoWriter_fourcc(*'XVID'), FPS, (width, height))
 ret, frame1 = video.read()
 prev_frame = frame1
 
@@ -24,7 +24,6 @@ while True:
     if ret is True:
         if (((np.sum(np.absolute(frame-prev_frame))/np.size(frame)) > threshold)):
             #print(frame)
-            print("Making Magic")
             writer.write(frame)
             prev_frame = frame
             a += 1
@@ -55,3 +54,6 @@ while True:
             print("Total frames: ", c)
             print("Unique frames: ", a)
             print("Common frames: ", b)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
