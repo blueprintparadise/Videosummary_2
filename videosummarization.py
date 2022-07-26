@@ -54,6 +54,3 @@ while True:
             print("Total frames: ", c)
             print("Unique frames: ", a)
             print("Common frames: ", b)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
