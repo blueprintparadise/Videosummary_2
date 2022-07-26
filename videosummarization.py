@@ -7,7 +7,7 @@ width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 threshold = 20.
 FPS = 2.0
-writer = cv2.VideoWriter('/content/Videosummary_2/fin.mp4', cv2.VideoWriter_fourcc(*'XVID'), FPS, (width, height))
+writer = cv2.VideoWriter('/content/Videosummary_2/fin.mp4', cv2.VideoWriter_fourcc(*'MJPG'), FPS, (width, height))
 ret, frame1 = video.read()
 prev_frame = frame1
 
@@ -43,7 +43,7 @@ while True:
             if  lst[-1] == "Start":
                 fin_dct['End_Time '+str(frame_counter)] = str(td2)
                 lst.append("End")
-            cv2.imshow('frame', frame)
+            #cv2.imshow('frame', frame)
             c += 1
         print(len(fin_dct))
         if len(fin_dct) > 880:
@@ -54,6 +54,3 @@ while True:
             print("Total frames: ", c)
             print("Unique frames: ", a)
             print("Common frames: ", b)
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
