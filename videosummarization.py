@@ -24,6 +24,7 @@ while True:
     if ret is True:
         if (((np.sum(np.absolute(frame-prev_frame))/np.size(frame)) > threshold)):
             #print(frame)
+            print("Making Magic")
             writer.write(frame)
             prev_frame = frame
             a += 1
