@@ -1,6 +1,7 @@
 import cv2 # pip install opencv-python
 import numpy as np # pip install numpy
 from datetime import timedelta
+import pprint
 
 video = cv2.VideoCapture('/content/Videosummary_2/1.mp4')
 width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
@@ -50,7 +51,9 @@ while True:
             video.release()
             writer.release()
             cv2.destroyAllWindows()
-            print(fin_dct)
+            pp = pprint.PrettyPrinter(depth=4)
+            pp.pprint(fin_dct)
+            #print(fin_dct)
             print("Total frames: ", c)
             print("Unique frames: ", a)
             print("Common frames: ", b)
