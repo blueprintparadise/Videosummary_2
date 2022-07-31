@@ -3,12 +3,12 @@ import numpy as np # pip install numpy
 from datetime import timedelta
 import pprint
 
-video = cv2.VideoCapture('/content/Videosummary_2/1.mp4')
+video = cv2.VideoCapture('../input/the-video/1.mp4')
 width = int(video.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(video.get(cv2.CAP_PROP_FRAME_HEIGHT))
 threshold = 20.
 FPS = 2.0
-writer = cv2.VideoWriter('/content/Videosummary_2/fin.mp4', cv2.VideoWriter_fourcc(*'MJPG'), FPS, (width, height))
+writer = cv2.VideoWriter('../input/the-video/1_1.mp4', cv2.VideoWriter_fourcc(*'MJPG'), FPS, (width, height))
 ret, frame1 = video.read()
 prev_frame = frame1
 
